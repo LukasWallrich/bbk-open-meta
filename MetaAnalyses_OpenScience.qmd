@@ -1,0 +1,140 @@
+---
+title: "Open, transparent and reproducible meta-analyses"
+author: "Lukas Wallrich (l.wallrich@bbk.ac.uk)"
+css: style.css
+format: 
+    revealjs:
+        incremental: true
+        title-slide-attributes:
+          data-background-image: sparkler.jpg
+          data-background-size: cover
+---
+
+# Introduction
+
+## Meta-analyses - ambitious and challenging
+
+- Purpose is to build consensus and lay foundations
+- Large garden of forking paths
+- Wide audience who might have varying interests
+
+## Results are not always unambiguous
+::: {.fragment}
+![](MetaAnalyses_OpenScience_insertimage_7.png)
+:::
+
+
+## Results are not always unambiguous
+
+![Ego-depletion meta-analyses](MetaAnalyses_OpenScience_insertimage_2.png)
+
+*See [Feldman (2021)](https://youtu.be/Hiu3rF5ir1U?t=3340) talk for a step-by-step history*
+
+
+## Status quo
+
+- Meta-analyses rarely updated, instead duplicated with limited comparability
+- Low quality (though limited evidence):
+    - Substantial effect size errors (d > .1) in 10 of 27 medical meta-analyses [(Gøtzsche et al., 2007)](https://jamanetwork.com/journals/jama/article-abstract/208139)
+    - 20% 'flawed beyond repair' and 27% 'redundant and unnecessary' (DO NOT TRUST THE NUMBERS!, [Ioannidis, 2016](https://me001ned.edis.at/publichealth/archiv/artikel/Artikel%202016/2016_Ioannidis_The%20Mass%20Production%20of%20Redundant,%20Misleading,%20and%20Conflicted%20Systematic%20Reviews%20and%20Meta-analyses.pdf))
+- Conflicting results lead to "meta-analysis wars" (violent video games - [Mathur & VanderWeeele, 2019](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6904227/); depression screening, [Goodyear-Smith et al., 2012](https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/1471-2288-12-76))    
+
+
+# Open Science 
+
+## What is Open Science?
+
+![](MetaAnalyses_OpenScience_insertimage_4.png)
+
+## An Open Science approach to meta-analyses
+
+
+1. Create a Pre-Registrations or Registered Reports
+2. Share *all* data & code
+3. Release preprint & promote Open Access
+
+## How to pre-register?
+
+- Basic ideas:
+    - commit to *a plan* before you see the data
+    - create a clean and comprehensive protocol
+    - distinguish between planned and exploratory analyses - deviations are ususal and fine if reported
+- Common in health sciences - PROSPERO
+- Easy to do in any area, e.g., on [OSF](https://osf.io/registries/) (either with template, or 'free form')
+- Many templates exist - most general: [PRISMA-P](http://prisma-statement.org/Extensions/Protocols?AspxAutoDetectCookieSupport=1)
+
+## Registered Reports
+
+::: {.fragment}
+![](MetaAnalyses_OpenScience_insertimage_5.png)
+:::
+
+- In-principle acceptance based on introduction and methods
+- Focuses peer review on robustness and potential contribution - not 'sexiness' of results
+- Makes reviewer feedback more useful (beyond editing limitations section and 'HARKing')
+
+## Registered Report meta-analysis
+
+- Emerging area - though Feldman et al. offer detailed [templates](https://mgto.org/meta-analysis-registered-reports/)
+- Ongoing project on diversity-performance link, accepted in-principle at JBP - [registered on OSF](https://osf.io/f5qdn)
+- Differing opinions *when* to do it (pre- or post-search) - at least pre-coding, and emerging practice leans towards pre-search
+- Offered by at least 84 journals for meta-analyses, e.g., *Management and Organization Review*, *Journal of Business and Psychology*, *European Journal of Social Psychology* - see [COS list](https://docs.google.com/spreadsheets/d/1D4_k-8C_UENTRtbPzXfhjEyu3BfLxdOsn9j-otrO870/edit#gid=0)
+
+## RR are associated with different results
+
+- 4% of regular parapsychology studies failed to reject null hypotheses - vs 56% for registered reports (in the 1970s - [Wieseman et al., 2019](https://peerj.com/articles/6232/))
+- More recently, 60% of registered reports failed to reject null hypotheses - vs an estimated 5-20% of regular articles ([Allen et al., 2019](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3000246))
+- *More* likely to be computationally reproducible - though still only 58% shared code and data, out of which 58% were fully reproducible [(Obels et al., 2020)](https://journals.sagepub.com/doi/10.1177/2515245920918872)
+- Improvements in rigour do *not* come at the cost of novelty or creativity [(Soderberg et al., 2021)](https://osf.io/preprints/metaarxiv/7x9vy/)
+- No evidence yet for meta-analyses in particular
+
+## Enabling exploration - metaUI
+
+- Supplementary web apps can increase engagement and relevance
+- Some exist, yet so far hard to build
+- metaUI R-package [(Wallrich & Röseler, 2023)](https://lukaswallrich.github.io/metaUI/) now released as beta-version ![](MetaAnalyses_OpenScience_insertimage_8.png){height=30}
+- Allows to create custom web-apps with limited coding skills - e.g., [for the nudging dataset](https://lukaswallrich.shinyapps.io/nudging_app/)
+- See the [step-by-step video tutorial](https://www.youtube.com/watch?v=iaTMFzWfCe0&ab_channel=ESMARConf) ... and get in touch if you need extra functionalities
+
+## Other good-practice points
+
+- Use *all* (dependent) effect sizes - particularly with broad scope. Reduces noise and bias - and no longer hard to do ([Harrer e-book](https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/multilevel-ma.html)) 
+- Focus on effect size over significance - and consider smallest effect size of interest. Then *equivalence tests* ([Lakens, 2017](https://journals.sagepub.com/doi/10.1177/1948550617697177)) are the most insightful significance tests
+- Consider going beyond the English literature - machine translation of PDFs 'works'
+
+
+## Progress & future directions
+
+- 84% of meta-analyse in clinical psychology make raw data for primary effect sizes available (but only 1% the analysis script) [(López-Nicolás et al., 2021)](https://d-nb.info/1242862358/34) - *we do not seem to be there yet*
+- Community-augmented meta-analyses ([Cristia et al., 2022](https://open.lnu.se/index.php/metapsychology/article/view/2741/2746)) as a next step: growth of platforms that allow continuous updating of evidence-base, e.g. [PsychOPEN CAMA](https://cama.psychopen.eu/analyses), related to Living Systematic Reviews
+
+## Recap: An Open Science approach to meta-analyses
+
+- Create a Pre-Registrations or Registered Reports
+- Share *all* data & code
+- Release preprint & promote Open Access
+- *Isn't that just good science?*
+
+::: {.fragment}
+::: aside
+*Slides available on [https://lukaswallrich.github.io/bbk-open-meta](https://lukaswallrich.github.io/bbk-open-meta)*
+:::
+:::
+
+# Resources
+
+## Articles
+
+- Lakens, D., Hilgard, J., & Staaks, J. (2016). [On the reproducibility of meta-analyses: Six practical recommendations.](https://bmcpsychology.biomedcentral.com/articles/10.1186/s40359-016-0126-3) *BMC Psychology.*
+- Moreau, D., & Gamble, B. (2020). [Conducting a meta-analysis in the age of open science: Tools, tips, and practical recommendations.](https://psyarxiv.com/t5dwg/) *Psychological Methods.* ... and their suite of [templates](https://osf.io/q8stz/?view_only=), including analysis code
+- Chambers, C. D., & Tzavella, L. (2022). [The past, present and future of registered reports.](https://www.nature.com/articles/s41562-021-01193-7) Nature Human Behaviour. (on registered reports in general)
+
+## Videos
+
+![](MetaAnalyses_OpenScience_insertimage_6.png)
+
+[Dan Quintana's playlist on YouTube](https://www.youtube.com/playlist?list=PLLxPQQX9fjv1PaBVlPbOaXLcIDLlcgQa9) - particularly videos 9 and 15
+
+- [Transparent meta-analysis workshop](https://mgto.org/meta-analysis-registered-reports/) (and further resources) by Gilad Feldman
+
+- [ESMARConf playlists](https://www.youtube.com/@esmarconf/playlists) - free annual online conference concerning evidence synthesis methods and tools
